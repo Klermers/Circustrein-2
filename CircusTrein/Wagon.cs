@@ -13,7 +13,7 @@ namespace CircusTrein
         private int Wagonroom = 0;
         private int totalRoom  = 10;
         private List<Animal> animals = new List<Animal>();
-        public enum Food { Herbivour = 1, Carnivour = 2 }
+        public static enum Food { Herbivour = 1, Carnivour = 2 }
 
         public Wagon()
         {
@@ -24,45 +24,6 @@ namespace CircusTrein
         {
             get { return this.animals; }
             set { animals = value; }
-        }
-
-        public bool CheckCarnivour()
-        {
-            foreach(var animal in animals)
-            {
-                if(animal.Type == (int)Food.Carnivour)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        public bool CheckSizeHerbivour(Animal checkcarn)
-        {
-            foreach(var animal in animals)
-            {
-                if(animal.Size <= checkcarn.Size)
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        public bool CheckSizeCarnivour(Animal checkherb)
-        {
-            foreach(var animal in animals)
-            {
-                if(animal.Type == (int)Food.Carnivour)
-                {
-                    if (checkherb.Size <= animal.Size)
-                    {
-                        return false;
-                    }
-                }
-            }
-            return true;
         }
 
         public bool AddWagonHerbivore(Animal animalrd)
