@@ -13,7 +13,7 @@ namespace CircusTrein
         private int Wagonroom = 0;
         private int totalRoom  = 10;
         private List<Animal> animals = new List<Animal>();
-        public static enum Food { Herbivour = 1, Carnivour = 2 }
+        public enum Food { Herbivour = 1, Carnivour = 2 }
 
         public Wagon()
         {
@@ -28,9 +28,9 @@ namespace CircusTrein
 
         public bool AddWagonHerbivore(Animal animalrd)
         {
-            if (CheckCarnivour() == true)
+            if (animalrd.CheckCarnivour(Animals,(int)Food.Carnivour) == true)
             {
-                if (CheckSizeCarnivour(animalrd) == true)
+                if (animalrd.CheckSizeCarnivour(Animals,(int)Food.Carnivour) == true)
                 {
                     if (Wagonroom + animalrd.Size <= totalRoom)
                     {
@@ -39,7 +39,7 @@ namespace CircusTrein
                     }
                 }
             }
-            else if (CheckCarnivour() == false)
+            else if (animalrd.CheckSizeCarnivour(Animals,(int)Food.Carnivour) == false)
             {
                 if (Wagonroom + animalrd.Size <= totalRoom)
                 {
@@ -52,9 +52,9 @@ namespace CircusTrein
 
         public bool AddWagonCarnivour(Animal animalrd)
         {
-            if(CheckCarnivour() == false)
+            if(animalrd.CheckCarnivour(Animals,(int)Food.Carnivour) == false)
             {
-                if (CheckSizeHerbivour(animalrd) == true)
+                if (animalrd.CheckSizeHerbivour(Animals) == true)
                 {
                     if (Wagonroom + animalrd.Size <= totalRoom)
                     {

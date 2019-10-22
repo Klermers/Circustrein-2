@@ -50,26 +50,11 @@ namespace CircusTrein
             return false;
         }
 
-        public bool CheckSizeAnimalType(List<Animal> animals, int typecarn, int typeherb)
-        {
-            foreach(Animal animal in animals)
-            {
-                if(animal == typecarn)
-                {
-
-                }
-                else if (animal == typeherb)
-                {
-
-                }
-            }
-        }
-
-        public bool CheckSizeHerbivour(Animal checkcarn, List<Animal> animals)
+        public bool CheckSizeHerbivour(List<Animal> animals)
         {
             foreach (var animal in animals)
             {
-                if (animal.Size <= checkcarn.Size)
+                if (size <= animal.size)
                 {
                     return false;
                 }
@@ -77,13 +62,13 @@ namespace CircusTrein
             return true;
         }
 
-        public bool CheckSizeCarnivour(Animal checkherb, List<Animal> animals, int type)
+        public bool CheckSizeCarnivour(List<Animal> animals, int type)
         {
             foreach (var animal in animals)
             {
                 if (animal.Type == type)
                 {
-                    if (checkherb.Size <= animal.Size)
+                    if (animal.Size <= size)
                     {
                         return false;
                     }
