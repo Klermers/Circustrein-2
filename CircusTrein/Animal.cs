@@ -42,7 +42,7 @@ namespace CircusTrein
         {
             foreach (var animal in animals)
             {
-                if (type == animal.type )
+                if (type == animal.Type )
                 {
                     return true;
                 }
@@ -54,7 +54,7 @@ namespace CircusTrein
         {
             foreach (var animal in animals)
             {
-                if (size <= animal.size)
+                if (animal.Size <= size)
                 {
                     return false;
                 }
@@ -68,7 +68,7 @@ namespace CircusTrein
             {
                 if (animal.Type == type)
                 {
-                    if (animal.Size <= size)
+                    if (size <= animal.Size)
                     {
                         return false;
                     }

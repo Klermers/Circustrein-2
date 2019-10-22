@@ -39,7 +39,7 @@ namespace CircusTrein
                     }
                 }
             }
-            else if (animalrd.CheckSizeCarnivour(Animals,(int)Food.Carnivour) == false)
+            else if (animalrd.CheckCarnivour(Animals,(int)Food.Carnivour) == false)
             {
                 if (Wagonroom + animalrd.Size <= totalRoom)
                 {

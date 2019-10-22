@@ -44,7 +44,7 @@ namespace CircusTrein_UnitTests
         {
             //Arange
             Wagon wagon = new Wagon();
-            Animal animal = new Animal("Zebra", 3, 1);
+            Animal animal = new Animal("lion", 3, 2);
             Animal animal2 = new Animal("Zebra", 1, 1);
             List<Animal> animals = new List<Animal>();
 
@@ -78,14 +78,14 @@ namespace CircusTrein_UnitTests
         {
             //Arange
             Wagon wagon = new Wagon();
-            Animal carnanimal = new Animal("Lion", 1, 2);
+            Animal carnanimal = new Animal("Lion", 5, 2);
             Animal checkherb = new Animal("Zebra", 3, 1);
             List<Animal> animals = new List<Animal>();
 
             //Act
             animals.Add(carnanimal);
             wagon.Animals = animals;
-            var result = carnanimal.CheckSizeCarnivour(animals,2);
+            var result = checkherb.CheckSizeCarnivour(animals,2);
 
             //Assert
             Assert.IsFalse(result);
