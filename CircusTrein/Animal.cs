@@ -27,7 +27,7 @@ namespace CircusTrein
         }
 
         public int Size
-        {
+        {   
             get { return this.size; }
             set { this.size = value; }
         }

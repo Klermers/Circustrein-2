@@ -9,7 +9,7 @@ namespace CircusTrein
     public class Train
     {
         List<Wagon> wagons;
-        Wagon add = new Wagon();
+        Wagon add;
         //  string wagonnumb;
 
 
@@ -20,13 +20,13 @@ namespace CircusTrein
 
         public Train()
         {
+            add = new Wagon();
             wagons = new List<Wagon>();
             wagons.Add(add);
         }
 
         public string TrainWagonCycleAdd(Animal animalrd)
         {
-            add = new Wagon();
             int y = 1;
             int i = 0;
 
@@ -39,12 +39,13 @@ namespace CircusTrein
                 else if (wagons[i].WagonAdd(animalrd) == false)
                 {
                     y++;
+                    add = new Wagon();
                     wagons.Add(add);
                 }
             }
 
             return string.Format("Animal added to {0}", wagons[i-1].ToString());
-        }
+        }   
 
         public List<Animal> Wagonanimals(int cycle)
         {

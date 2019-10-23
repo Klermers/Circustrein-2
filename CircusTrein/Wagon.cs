@@ -9,7 +9,7 @@ namespace CircusTrein
     public class Wagon
     {
         private int currentWagonNumb;
-        private static int Wagoncycle = 1;
+        private static int Wagoncycle = 0;
         private int Wagonroom = 0;
         private int totalRoom  = 10;
         private List<Animal> animals = new List<Animal>();
@@ -17,8 +17,8 @@ namespace CircusTrein
 
         public Wagon()
         {
-            currentWagonNumb= Wagoncycle;
             Wagoncycle +=1;
+            currentWagonNumb = Wagoncycle;
         }
         public List<Animal> Animals
         {
