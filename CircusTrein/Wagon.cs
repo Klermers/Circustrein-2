@@ -26,7 +26,7 @@ namespace CircusTrein
             set { animals = value; }
         }
 
-        public bool AddWagonHerbivore(Animal animalrd)
+        private bool AddWagonHerbivore(Animal animalrd)
         {
             if (animalrd.CheckCarnivour(Animals,(int)Food.Carnivour) == true)
             {
@@ -50,7 +50,7 @@ namespace CircusTrein
             return false;
         }
 
-        public bool AddWagonCarnivour(Animal animalrd)
+        private bool AddWagonCarnivour(Animal animalrd)
         {
             if(animalrd.CheckCarnivour(Animals,(int)Food.Carnivour) == false)
             {

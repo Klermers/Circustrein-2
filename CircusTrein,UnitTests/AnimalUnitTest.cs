@@ -40,7 +40,7 @@ namespace CircusTrein_UnitTests
 
         }
         [TestMethod]
-        public void CheckSizeHerbivour_checkcarnSize_Returnfalse()
+        public void Isanimalsize_SmallerThanHerbivour_checkcarnSize_Returnfalse()
         {
             //Arange
             Wagon wagon = new Wagon();
@@ -51,13 +51,13 @@ namespace CircusTrein_UnitTests
             //Act
             animals.Add(animal2);
             wagon.Animals = animals;
-            var result = animal.CheckSizeHerbivour(animals);
+            var result = animal.Isanimalsize_SmallerThanHerbivour(animals);
 
             //Assert
             Assert.IsFalse(result);
         }
         [TestMethod]
-        public void CheckSizeHerbivour_checkcarnSize_Returntrue()
+        public void Isanimalsize_SmallerThanHerbivour_checkcarnSize_Returntrue()
         {
             //Arange
             Wagon wagon = new Wagon();
@@ -68,13 +68,13 @@ namespace CircusTrein_UnitTests
             //Act
             animals.Add(animal2);
             wagon.Animals = animals;
-            var result = carnanimal.CheckSizeHerbivour(animals);
+            var result = carnanimal.Isanimalsize_SmallerThanHerbivour(animals);
 
             //Assert
             Assert.IsTrue(result);
         }
         [TestMethod]
-        public void CheckSizeCarnivour_checkherbSize_Returnfalse()
+        public void Isanimalsize_BiggerThanCarnivour_checkherbSize_Returnfalse()
         {
             //Arange
             Wagon wagon = new Wagon();
@@ -85,14 +85,14 @@ namespace CircusTrein_UnitTests
             //Act
             animals.Add(carnanimal);
             wagon.Animals = animals;
-            var result = checkherb.CheckSizeCarnivour(animals,2);
+            var result = checkherb.Isanimalsize_BiggerThanCarnivour(animals,2);
 
             //Assert
             Assert.IsFalse(result);
 
         }
         [TestMethod]
-        public void CheckSizeCarnivour_checkherbSize_Returntrue()
+        public void Isanimalsize_BiggerThanCarnivour_checkherbSize_Returntrue()
         {
             //Arange
             Wagon wagon = new Wagon();
@@ -103,8 +103,7 @@ namespace CircusTrein_UnitTests
             //Act
             animals.Add(carnanimal);
             wagon.Animals = animals;
-            var result = checkherb.CheckSizeCarnivour(animals,2);
-
+            var result = checkherb.Isanimalsize_BiggerThanCarnivour(animals,2);
             //Assert
             Assert.IsTrue(result);
 
