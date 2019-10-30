@@ -30,7 +30,7 @@ namespace CircusTrein
         {
             if (animalrd.CheckCarnivour(Animals,(int)Food.Carnivour) == true)
             {
-                if (animalrd.CheckSizeCarnivour(Animals,(int)Food.Carnivour) == true)
+                if (animalrd.Isanimalsize_BiggerThanCarnivour(Animals,(int)Food.Carnivour) == true)
                 {
                     if (Wagonroom + animalrd.Size <= totalRoom)
                     {
@@ -54,7 +54,7 @@ namespace CircusTrein
         {
             if(animalrd.CheckCarnivour(Animals,(int)Food.Carnivour) == false)
             {
-                if (animalrd.CheckSizeHerbivour(Animals) == true)
+                if (animalrd.Isanimalsize_SmallerThanHerbivour(Animals) == true)
                 {
                     if (Wagonroom + animalrd.Size <= totalRoom)
                     {

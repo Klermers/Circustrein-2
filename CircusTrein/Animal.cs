@@ -50,7 +50,7 @@ namespace CircusTrein
             return false;
         }
 
-        public bool CheckSizeHerbivour(List<Animal> animals)
+        public bool Isanimalsize_SmallerThanHerbivour(List<Animal> animals)
         {
             foreach (var animal in animals)
             {
@@ -62,7 +62,7 @@ namespace CircusTrein
             return true;
         }
 
-        public bool CheckSizeCarnivour(List<Animal> animals, int type)
+        public bool Isanimalsize_BiggerThanCarnivour(List<Animal> animals, int type)
         {
             foreach (var animal in animals)
             {
