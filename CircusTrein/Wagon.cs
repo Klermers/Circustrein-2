@@ -20,17 +20,16 @@ namespace CircusTrein
             Wagoncycle +=1;
             currentWagonNumb = Wagoncycle;
         }
-        public List<Animal> Animals
+        public IReadOnlyList<Animal> Animals
         {
             get { return this.animals; }
-            set { animals = value; }
         }
 
-        private bool AddWagonHerbivore(Animal animalrd)
+        private bool HerbivoreIsAdded(Animal animalrd)
         {
-            if (animalrd.CheckCarnivour(Animals,(int)Food.Carnivour) == true)
+            if (animalrd.AnimalisCarnivour(animals, (int)Food.Carnivour) == true)
             {
-                if (animalrd.Isanimalsize_BiggerThanCarnivour(Animals,(int)Food.Carnivour) == true)
+                if (animalrd.Animalsizeis_BiggerThanCarnivour(animals, (int)Food.Carnivour) == true)
                 {
                     if (Wagonroom + animalrd.Size <= totalRoom)
                     {
@@ -39,7 +38,7 @@ namespace CircusTrein
                     }
                 }
             }
-            else if (animalrd.CheckCarnivour(Animals,(int)Food.Carnivour) == false)
+            else if (animalrd.AnimalisCarnivour(animals, (int)Food.Carnivour) == false)
             {
                 if (Wagonroom + animalrd.Size <= totalRoom)
                 {
@@ -50,11 +49,11 @@ namespace CircusTrein
             return false;
         }
 
-        private bool AddWagonCarnivour(Animal animalrd)
+        private bool CarnivourIsAdded(Animal animalrd)
         {
-            if(animalrd.CheckCarnivour(Animals,(int)Food.Carnivour) == false)
+            if(animalrd.AnimalisCarnivour(animals, (int)Food.Carnivour) == false)
             {
-                if (animalrd.Isanimalsize_SmallerThanHerbivour(Animals) == true)
+                if (animalrd.Animalsizeis_SmallerThanHerbivour(animals) == true)
                 {
                     if (Wagonroom + animalrd.Size <= totalRoom)
                     {
@@ -66,19 +65,21 @@ namespace CircusTrein
             return false;
         }
 
-        public bool WagonAdd(Animal animalrd)
+        public bool AnimalIsAdded(Animal animalrd)
         {
             if(animalrd.Type == (int)Food.Carnivour)
             {
-                if(AddWagonCarnivour(animalrd) == true)
+                if(CarnivourIsAdded(animalrd) == true)
                 {
+                    animals.Add(animalrd);
                     return true;
                 }
             }
             else if (animalrd.Type == (int)Food.Herbivour)
             {
-                if (AddWagonHerbivore(animalrd) == true)
+                if (HerbivoreIsAdded(animalrd) == true)
                 {
+                    animals.Add(animalrd);
                     return true;
                 }
             }

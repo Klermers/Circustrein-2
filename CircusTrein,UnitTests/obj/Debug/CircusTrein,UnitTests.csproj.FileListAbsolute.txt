@@ -44,3 +44,6 @@ C:\Users\Jeremey\Source\Repos\Klermers\Circustrein-2\CircusTrein,UnitTests\bin\D
 C:\Users\Jeremey\Source\Repos\Klermers\Circustrein-2\CircusTrein,UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
 C:\Users\Jeremey\Source\Repos\Klermers\Circustrein-2\CircusTrein,UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
 C:\Users\Jeremey\Source\Repos\Klermers\Circustrein-2\CircusTrein,UnitTests\obj\Debug\CircusTrein,UnitTests.csproj.CopyComplete
+C:\Users\Jeremey\Source\Repos\Klermers\Circustrein-2\CircusTrein,UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Jeremey\Source\Repos\Klermers\Circustrein-2\CircusTrein,UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Jeremey\Source\Repos\Klermers\Circustrein-2\CircusTrein,UnitTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll

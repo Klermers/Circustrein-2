@@ -20,7 +20,7 @@ namespace CircusTrein
 
         }
 
-        public string Name
+        private string Name
         {
             get { return this.name; }
             set { this.name = value; }
@@ -29,16 +29,14 @@ namespace CircusTrein
         public int Size
         {   
             get { return this.size; }
-            set { this.size = value; }
         }
 
         public int Type
         {
             get { return this.type; }
-            set { this.type = value; }
         }
 
-        public bool CheckCarnivour(List<Animal> animals,int type)
+        public bool AnimalisCarnivour(List<Animal> animals,int type)
         {
             foreach (var animal in animals)
             {
@@ -50,7 +48,7 @@ namespace CircusTrein
             return false;
         }
 
-        public bool Isanimalsize_SmallerThanHerbivour(List<Animal> animals)
+        public bool Animalsizeis_SmallerThanHerbivour(List<Animal> animals)
         {
             foreach (var animal in animals)
             {
@@ -62,7 +60,7 @@ namespace CircusTrein
             return true;
         }
 
-        public bool Isanimalsize_BiggerThanCarnivour(List<Animal> animals, int type)
+        public bool Animalsizeis_BiggerThanCarnivour(List<Animal> animals, int type)
         {
             foreach (var animal in animals)
             {

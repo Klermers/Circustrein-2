@@ -27,29 +27,27 @@ namespace CircusTrein
 
         public string TrainWagonCycleAdd(Animal animalrd)
         {
-            int y = 1;
-            int i = 0;
+            int Nextwagon = 1;
+            int CurrentWagon = 0;
 
-            for (i = 0; i < y; i++)
+            for (CurrentWagon = 0; CurrentWagon < Nextwagon; CurrentWagon++)
             {
-                if (wagons[i].WagonAdd(animalrd) == true)
+                bool AnimalIsAdded = wagons[CurrentWagon].AnimalIsAdded(animalrd);
+
+                if (AnimalIsAdded == false)
                 {
-                    wagons[i].Animals.Add(animalrd);
-                }
-                else if (wagons[i].WagonAdd(animalrd) == false)
-                {
-                    y++;
+                    Nextwagon++;
                     add = new Wagon();
                     wagons.Add(add);
                 }
             }
 
-            return string.Format("Animal added to {0}", wagons[i-1].ToString());
+            return string.Format("Animal added to {0}", wagons[CurrentWagon-1].ToString());
         }   
 
-        public List<Animal> Wagonanimals(int cycle)
+        public IReadOnlyList<Animal> Wagonanimals(int currentwagon)
         {
-            return wagons[cycle].Animals;
+            return wagons[currentwagon].Animals;
         }
 
          /* public string TrainWagoncycle(Animal animalrd)

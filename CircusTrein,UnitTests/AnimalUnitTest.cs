@@ -18,8 +18,7 @@ namespace CircusTrein_UnitTests
 
             //Act
             animals.Add(TestAnimal);
-            wagon.Animals = animals;
-            var result = TestAnimal.CheckCarnivour(animals,2);
+            var result = TestAnimal.AnimalisCarnivour(animals,2);
             //Assert
             Assert.IsTrue(result);
 
@@ -34,7 +33,7 @@ namespace CircusTrein_UnitTests
 
             //Act
             Animal TestAnimal = new Animal("Lion", 3, 2);
-            var result = TestAnimal.CheckCarnivour(animals,2);
+            var result = TestAnimal.AnimalisCarnivour(animals,2);
             //Assert
             Assert.IsFalse(result);
 
@@ -50,8 +49,7 @@ namespace CircusTrein_UnitTests
 
             //Act
             animals.Add(animal2);
-            wagon.Animals = animals;
-            var result = animal.Isanimalsize_SmallerThanHerbivour(animals);
+            var result = animal.Animalsizeis_SmallerThanHerbivour(animals);
 
             //Assert
             Assert.IsFalse(result);
@@ -67,8 +65,7 @@ namespace CircusTrein_UnitTests
 
             //Act
             animals.Add(animal2);
-            wagon.Animals = animals;
-            var result = carnanimal.Isanimalsize_SmallerThanHerbivour(animals);
+            var result = carnanimal.Animalsizeis_SmallerThanHerbivour(animals);
 
             //Assert
             Assert.IsTrue(result);
@@ -84,8 +81,7 @@ namespace CircusTrein_UnitTests
 
             //Act
             animals.Add(carnanimal);
-            wagon.Animals = animals;
-            var result = checkherb.Isanimalsize_BiggerThanCarnivour(animals,2);
+            var result = checkherb.Animalsizeis_BiggerThanCarnivour(animals,2);
 
             //Assert
             Assert.IsFalse(result);
@@ -102,8 +98,7 @@ namespace CircusTrein_UnitTests
 
             //Act
             animals.Add(carnanimal);
-            wagon.Animals = animals;
-            var result = checkherb.Isanimalsize_BiggerThanCarnivour(animals,2);
+            var result = checkherb.Animalsizeis_BiggerThanCarnivour(animals,2);
             //Assert
             Assert.IsTrue(result);
 
